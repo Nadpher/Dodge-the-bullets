@@ -1,6 +1,7 @@
 #include <spdlog/spdlog.h>
 
 #include "Game.h"
+#include "Input.h"
 
 #include "Scenes/MainScene.h"
 
@@ -32,26 +33,12 @@ namespace nadpher
 
 			spdlog::info("Delta time: {}", deltaTime);
 
-			sf::Event event;
-			while (m_window.pollEvent(event))
-			{
-				switch (event.type)
-				{
-				case sf::Event::Closed:
-					m_window.close();
-					break;
-
-				default:
-					m_scenes[m_currentScene]->handle_events(event);
-					break;
-				}
-			}
+			handle_events();
 
 			m_scenes[m_currentScene]->iterate(deltaTime);
 
 			m_window.clear();
-			// ????????
-			m_window.draw(*(m_scenes[m_currentScene].get()));
+			m_window.draw(*m_scenes[m_currentScene]);
 			m_window.display();
 		}
 	}
@@ -59,5 +46,35 @@ namespace nadpher
 	void Game::end()
 	{
 
+	}
+
+	void Game::handle_events()
+	{
+		sf::Event event;
+		while (m_window.pollEvent(event))
+		{
+			switch (event.type)
+			{
+			case sf::Event::Closed:
+				m_window.close();
+				break;
+
+			case sf::Event::KeyPressed:
+				Input::get_instance()->set_key_up(event.key.code, true);
+				Input::get_instance()->set_key_down(event.key.code, true);
+				Input::get_instance()->set_key_pressed(event.key.code, true);
+				break;
+
+			case sf::Event::KeyReleased:
+				// released keys buffer?
+				Input::get_instance()->set_key_down(event.key.code, false);
+				Input::get_instance()->set_key_pressed(event.key.code, false);
+				Input::get_instance()->set_key_up(event.key.code, true);
+				break;
+
+			default:
+				break;
+			}
+		}
 	}
 }

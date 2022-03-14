@@ -17,6 +17,8 @@ namespace nadpher
 
 	private:
 
+		static void handle_events();
+
 		static std::vector<std::unique_ptr<Scene>> m_scenes;
 		static size_t m_currentScene;
 		static sf::RenderWindow m_window;

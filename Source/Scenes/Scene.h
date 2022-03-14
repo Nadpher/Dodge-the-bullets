@@ -11,7 +11,6 @@ namespace nadpher
 		virtual ~Scene() = default;
 
 		virtual void iterate(float deltaTime) = 0;
-		virtual void handle_events(sf::Event& event) = 0;
 	};
 }
 
