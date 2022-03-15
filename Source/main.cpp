@@ -2,7 +2,7 @@
 
 int main()
 {
-	if (!nadpher::Game::init(800, 600, "Dodge The Bullets"))
+	if (!nadpher::Game::init(1024, 768, "Dodge The Bullets"))
 	{
 		return 1;
 	}

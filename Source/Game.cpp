@@ -7,9 +7,10 @@
 
 namespace nadpher
 {
-	sf::RenderWindow Game::m_window;
+	sf::RenderWindow			        Game::m_window;
+	sf::Vector2u				        Game::m_bounds;
 	std::vector<std::unique_ptr<Scene>> Game::m_scenes;
-	size_t Game::m_currentScene = 0;
+	size_t							    Game::m_currentScene = 0;
 
 	bool Game::init(unsigned int width, unsigned int height, const char* title)
 	{
@@ -18,6 +19,9 @@ namespace nadpher
 		m_scenes.push_back(std::make_unique<MainScene>());
 
 		spdlog::set_level(spdlog::level::info);
+
+		m_bounds.x = width;
+		m_bounds.y = height;
 
 		return true;
 	}

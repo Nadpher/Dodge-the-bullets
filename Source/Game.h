@@ -15,10 +15,13 @@ namespace nadpher
 		static void run();
 		static void end();
 
+		static const sf::Vector2u& get_bounds() { return m_bounds; }
+
 	private:
 
 		static void handle_events();
 
+		static sf::Vector2u m_bounds;
 		static std::vector<std::unique_ptr<Scene>> m_scenes;
 		static size_t m_currentScene;
 		static sf::RenderWindow m_window;
