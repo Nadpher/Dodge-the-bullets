@@ -3,6 +3,7 @@
 
 #include "Scene.h"
 
+#include "../BulletSpawner.h"
 #include "../Actors/Player.h"
 
 namespace nadpher
@@ -10,15 +11,15 @@ namespace nadpher
 	class MainScene : public Scene
 	{
 	public:
-		MainScene() = default;
+		MainScene();
 		~MainScene() = default;
 
-		void iterate(float deltaTime) override;
+		bool iterate(float deltaTime) override;
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 	private:
 		Player m_player;
-
+		BulletSpawner m_bulletSpawner;
 	};
 }
 

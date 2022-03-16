@@ -16,6 +16,8 @@ namespace nadpher
 
 	private:
 		const float m_speed = 500.0f;
+
+		sf::Vector2f m_size;
 	};
 }
 

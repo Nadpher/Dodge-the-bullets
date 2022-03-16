@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\BulletSpawner.cpp" />
     <ClCompile Include="Source\Actors\Bullet.cpp" />
     <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Actors\Player.cpp" />
@@ -150,6 +151,7 @@
     <ClCompile Include="Source\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\BulletSpawner.h" />
     <ClInclude Include="Source\Actors\Actor.h" />
     <ClInclude Include="Source\Actors\Bullet.h" />
     <ClInclude Include="Source\Input.h" />

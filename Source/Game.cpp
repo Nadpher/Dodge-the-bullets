@@ -14,11 +14,11 @@ namespace nadpher
 
 	bool Game::init(unsigned int width, unsigned int height, const char* title)
 	{
+		spdlog::set_level(spdlog::level::debug);
 		m_window.create(sf::VideoMode(width, height), title);
 
 		m_scenes.push_back(std::make_unique<MainScene>());
 
-		spdlog::set_level(spdlog::level::info);
 
 		m_bounds.x = width;
 		m_bounds.y = height;

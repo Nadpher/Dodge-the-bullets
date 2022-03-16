@@ -16,7 +16,7 @@ namespace nadpher
 	Player::Player() : Actor(playerSpriteFilePath)
 	{
 		m_position = { 0, 400 };
-		m_size = { 100, 150 };
+		m_size = { 150, 100 };
 
 		m_sprite.setColor(sf::Color(255, 255, 255, 255));
 	}
@@ -76,6 +76,6 @@ namespace nadpher
 		m_sprite.setPosition(m_position);
 
 		sf::IntRect rect = m_sprite.getTextureRect();
-		m_sprite.setScale(m_size.x / rect.width, m_size.x / rect.height);
+		m_sprite.setScale(m_size.x / rect.width, m_size.y / rect.height);
 	}
 }

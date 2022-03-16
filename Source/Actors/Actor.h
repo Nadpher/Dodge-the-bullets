@@ -20,7 +20,6 @@ namespace nadpher
 
 	protected:
 		sf::Vector2f m_position;
-		sf::Vector2f m_size;
 		sf::Sprite m_sprite;
 	};
 }

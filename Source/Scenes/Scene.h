@@ -10,7 +10,7 @@ namespace nadpher
 	public:
 		virtual ~Scene() = default;
 
-		virtual void iterate(float deltaTime) = 0;
+		virtual bool iterate(float deltaTime) = 0;
 	};
 }
 
