@@ -3,7 +3,7 @@
 namespace nadpher
 {
 	MainScene::MainScene()
-		: m_bulletSpawner(300.0f, 500.0f, 1.0f)
+		: m_bulletSpawner(1.0f)
 	{
 		
 	}

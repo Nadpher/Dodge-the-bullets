@@ -9,18 +9,18 @@ namespace nadpher
 	{
 	public:
 		BulletSpawner() = delete;
-		BulletSpawner(float minBulletSpeed, float maxBulletSpeed, float frequency = 1000.0f);
+		BulletSpawner(float frequency = 1.0f);
 
 		void update(float deltaTime);
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+		static constexpr float minBulletSpeed = 300.0f;
+		static constexpr float maxBulletSpeed = 800.0f;
 	private:
 
 		void generateBullet();
 		void checkOutOfBounds();
 
-		const float m_minBulletSpeed;
-		const float m_maxBulletSpeed;
 
 		float m_spawnFrequency;
 		float m_timer;

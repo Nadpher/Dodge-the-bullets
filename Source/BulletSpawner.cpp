@@ -7,8 +7,8 @@
 
 namespace nadpher
 {
-	BulletSpawner::BulletSpawner(float minBulletSpeed, float maxBulletSpeed, float frequency)
-		: m_spawnFrequency(frequency), m_minBulletSpeed(minBulletSpeed), m_maxBulletSpeed(maxBulletSpeed)
+	BulletSpawner::BulletSpawner(float frequency)
+		: m_spawnFrequency(frequency)
 	{
 		m_timer = 0.0f;
 	}
@@ -38,12 +38,12 @@ namespace nadpher
 		std::random_device dev;
 		std::mt19937 rng(dev());
 		std::uniform_int_distribution<unsigned int> position(0, Game::get_bounds().y - Bullet::getSize().y);
-		std::uniform_real_distribution<float> speed(m_minBulletSpeed, m_maxBulletSpeed);
+		std::uniform_real_distribution<float> speed(minBulletSpeed, maxBulletSpeed);
 
 		float generatedSpeed = speed(rng);
 		spdlog::debug("Bullet speed: {}", generatedSpeed);
 
-		Bullet instance({(float)Game::get_bounds().x, (float)position(rng)}, speed(rng));
+		Bullet instance({(float)Game::get_bounds().x, (float)position(rng)}, generatedSpeed);
 		m_bullets.push_back(instance);
 	}
 
