@@ -18,6 +18,9 @@ namespace nadpher
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 	private:
+
+		bool isPlayerAlive(const std::vector<Bullet>& bullets);
+
 		Player m_player;
 		BulletSpawner m_bulletSpawner;
 	};

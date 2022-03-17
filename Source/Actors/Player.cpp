@@ -12,11 +12,11 @@
 namespace nadpher
 {
 	const char* Player::playerSpriteFilePath = "Resource/Textures/player.png";
+	const sf::Vector2f Player::size = { 150, 100 };
 
 	Player::Player() : Actor(playerSpriteFilePath)
 	{
 		m_position = { 0, 400 };
-		m_size = { 150, 100 };
 
 		m_sprite.setColor(sf::Color(255, 255, 255, 255));
 	}
@@ -58,24 +58,24 @@ namespace nadpher
 		{
 			m_position.x = 0;
 		}
-		else if (m_position.x > bounds.x - m_size.x)
+		else if (m_position.x > bounds.x - size.x)
 		{
-			m_position.x = bounds.x - m_size.x;
+			m_position.x = bounds.x - size.x;
 		}
 
 		if (m_position.y < 0)
 		{
 			m_position.y = 0;
 		}
-		else if (m_position.y > bounds.y - m_size.y)
+		else if (m_position.y > bounds.y - size.y)
 		{
-			m_position.y = bounds.y - m_size.y;
+			m_position.y = bounds.y - size.y;
 		}
 
 		// makes sprite follow player
 		m_sprite.setPosition(m_position);
 
 		sf::IntRect rect = m_sprite.getTextureRect();
-		m_sprite.setScale(m_size.x / rect.width, m_size.y / rect.height);
+		m_sprite.setScale(size.x / rect.width, size.y / rect.height);
 	}
 }

@@ -39,7 +39,10 @@ namespace nadpher
 
 			handle_events();
 
-			m_scenes[m_currentScene]->iterate(deltaTime);
+			if (!m_scenes[m_currentScene]->iterate(deltaTime))
+			{
+				break;
+			}
 
 			m_window.clear();
 			m_window.draw(*m_scenes[m_currentScene]);
@@ -49,7 +52,7 @@ namespace nadpher
 
 	void Game::end()
 	{
-
+		if (m_window.isOpen()) m_window.close();
 	}
 
 	void Game::handle_events()
@@ -70,7 +73,6 @@ namespace nadpher
 				break;
 
 			case sf::Event::KeyReleased:
-				// released keys buffer?
 				Input::get_instance()->set_key_down(event.key.code, false);
 				Input::get_instance()->set_key_pressed(event.key.code, false);
 				Input::get_instance()->set_key_up(event.key.code, true);

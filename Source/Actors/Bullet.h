@@ -13,15 +13,14 @@ namespace nadpher
 
 		void update(float deltaTime);
 
-		static sf::Vector2f& getSize() { return m_size; }
-		sf::Vector2f& getPosition() { return m_position; }
+		static const sf::Vector2f size;
+		const sf::Vector2f& getPosition() const { return m_position; }
 
 		static const char* bulletSpritePath;
 
 	private:
 		float m_speed;
 
-		static sf::Vector2f m_size;
 		sf::Vector2f m_scale;
 	};
 }

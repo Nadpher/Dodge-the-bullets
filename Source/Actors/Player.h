@@ -12,12 +12,14 @@ namespace nadpher
 
 		void update(float deltaTime);
 
+		const sf::Vector2f& getPosition() const { return m_position; }
+
 		static const char* playerSpriteFilePath;
+		static const sf::Vector2f size;
 
 	private:
 		const float m_speed = 500.0f;
 
-		sf::Vector2f m_size;
 	};
 }
 

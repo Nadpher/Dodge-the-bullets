@@ -10,6 +10,7 @@ namespace nadpher
 	class Actor : public sf::Drawable
 	{
 	public:
+		Actor() = default;
 		Actor(const char* texturePath) { m_sprite.setTexture(TextureManager::get_texture(texturePath)); }
 		~Actor() = default;
 

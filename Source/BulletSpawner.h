@@ -14,6 +14,8 @@ namespace nadpher
 		void update(float deltaTime);
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+		const std::vector<Bullet>& getBullets() const{ return m_bullets; }
+
 		static constexpr float minBulletSpeed = 300.0f;
 		static constexpr float maxBulletSpeed = 800.0f;
 	private:
