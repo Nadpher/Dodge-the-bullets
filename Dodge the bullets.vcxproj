@@ -143,7 +143,6 @@
   <ItemGroup>
     <ClCompile Include="Source\Scenes\MainScene\BulletSpawner.cpp" />
     <ClCompile Include="Source\Actors\Bullet.cpp" />
-    <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Actors\Player.cpp" />
     <ClCompile Include="Source\Scenes\MainScene\MainScene.cpp" />
     <ClCompile Include="Source\Game.cpp" />
