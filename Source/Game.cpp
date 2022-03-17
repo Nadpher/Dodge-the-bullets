@@ -41,6 +41,7 @@ namespace nadpher
 
 			if (!m_scenes[m_currentScene]->iterate(deltaTime))
 			{
+				m_scenes[m_currentScene]->end();
 				break;
 			}
 

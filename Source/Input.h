@@ -1,9 +1,10 @@
 #ifndef DTB_INPUT_H
 #define DTB_INPUT_H
 
+#include <SFML/Window.hpp>
 #include <map>
-#include <SFML/Graphics.hpp>
 
+// this shouldn't be a singleton -.-
 namespace nadpher
 {
 	class Input
