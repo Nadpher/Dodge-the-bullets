@@ -29,9 +29,9 @@ namespace nadpher
 			//aabb collision detection
 			sf::Vector2f bulletPosition = bullet.getPosition();
 
-			if (playerPosition.x < bulletPosition.x + Bullet::size.x &&
-				playerPosition.x + Player::size.x - Player::hitboxEaser / 2 > bulletPosition.x &&
-				playerPosition.y < bulletPosition.y + Bullet::size.y &&
+			if (playerPosition.x + Player::hitboxEaser < bulletPosition.x + Bullet::size.x &&
+				playerPosition.x + Player::size.x - Player::hitboxEaser > bulletPosition.x &&
+				playerPosition.y + Player::hitboxEaser < bulletPosition.y + Bullet::size.y &&
 				playerPosition.y + Player::size.y  - Player::hitboxEaser > bulletPosition.y)
 			{
 				return false;
