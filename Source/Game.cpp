@@ -2,6 +2,7 @@
 
 #include "Game.h"
 #include "Input.h"
+#include "SceneManager.h"
 
 #include "Scenes/MainScene/MainScene.h"
 
@@ -9,15 +10,11 @@ namespace nadpher
 {
 	sf::RenderWindow			        Game::m_window;
 	sf::Vector2u				        Game::m_bounds;
-	std::vector<std::unique_ptr<Scene>> Game::m_scenes;
-	size_t							    Game::m_currentScene = 0;
 
 	bool Game::init(unsigned int width, unsigned int height, const char* title)
 	{
 		spdlog::set_level(spdlog::level::debug);
 		m_window.create(sf::VideoMode(width, height), title);
-
-		m_scenes.push_back(std::make_unique<MainScene>());
 
 		m_bounds.x = width;
 		m_bounds.y = height;
@@ -38,14 +35,14 @@ namespace nadpher
 
 			handle_events();
 
-			if (!m_scenes[m_currentScene]->iterate(deltaTime))
+			if (!SceneManager::getInstance()->getScene()->iterate(deltaTime))
 			{
-				m_scenes[m_currentScene]->end();
+				SceneManager::getInstance()->getScene()->end();
 				break;
 			}
 
 			m_window.clear();
-			m_window.draw(*m_scenes[m_currentScene]);
+			m_window.draw(*SceneManager::getInstance()->getScene());
 			m_window.display();
 		}
 	}

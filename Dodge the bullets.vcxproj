@@ -142,7 +142,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Source\Input.cpp" />
-    <ClCompile Include="Source\SceneManager.cpp" />
     <ClCompile Include="Source\Scenes\MainScene\GUI.cpp" />
     <ClCompile Include="Source\Scenes\MainScene\BulletSpawner.cpp" />
     <ClCompile Include="Source\Actors\Bullet.cpp" />

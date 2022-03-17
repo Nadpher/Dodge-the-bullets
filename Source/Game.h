@@ -22,8 +22,6 @@ namespace nadpher
 		static void handle_events();
 
 		static sf::Vector2u m_bounds;
-		static std::vector<std::unique_ptr<Scene>> m_scenes;
-		static size_t m_currentScene;
 		static sf::RenderWindow m_window;
 
 	};
