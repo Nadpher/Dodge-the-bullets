@@ -5,6 +5,7 @@
 
 #include "../../Actors/Player.h"
 #include "BulletSpawner.h"
+#include "GUI.h"
 
 namespace nadpher
 {
@@ -25,6 +26,9 @@ namespace nadpher
 
 		Player m_player;
 		BulletSpawner m_bulletSpawner;
+		GUI m_gui;
+
+		float m_score;
 	};
 }
 

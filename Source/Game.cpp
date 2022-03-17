@@ -19,7 +19,6 @@ namespace nadpher
 
 		m_scenes.push_back(std::make_unique<MainScene>());
 
-
 		m_bounds.x = width;
 		m_bounds.y = height;
 

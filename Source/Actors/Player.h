@@ -14,6 +14,10 @@ namespace nadpher
 
 		const sf::Vector2f& getPosition() const { return m_position; }
 
+		// is used by collision checking function
+		// to make player hitbox more fair and harder to hit
+		static constexpr float hitboxEaser = 20.0f;
+
 		static const char* playerSpriteFilePath;
 		static const sf::Vector2f size;
 

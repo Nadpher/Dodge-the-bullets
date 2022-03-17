@@ -10,8 +10,12 @@ namespace nadpher
 
 	bool MainScene::iterate(float deltaTime)
 	{
+		m_score += deltaTime;
+
 		m_player.update(deltaTime);
 		m_bulletSpawner.update(deltaTime);
+
+		m_gui.update(m_score);
 
 		return isPlayerAlive(m_bulletSpawner.getBullets());
 	}
@@ -26,9 +30,9 @@ namespace nadpher
 			sf::Vector2f bulletPosition = bullet.getPosition();
 
 			if (playerPosition.x < bulletPosition.x + Bullet::size.x &&
-				playerPosition.x + Player::size.x > bulletPosition.x &&
+				playerPosition.x + Player::size.x - Player::hitboxEaser / 2 > bulletPosition.x &&
 				playerPosition.y < bulletPosition.y + Bullet::size.y &&
-				playerPosition.y + Player::size.y > bulletPosition.y)
+				playerPosition.y + Player::size.y  - Player::hitboxEaser > bulletPosition.y)
 			{
 				return false;
 			}
@@ -46,5 +50,7 @@ namespace nadpher
 	{
 		target.draw(m_player, states);
 		target.draw(m_bulletSpawner, states);
+
+		target.draw(m_gui);
 	}
 }
