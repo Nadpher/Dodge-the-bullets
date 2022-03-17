@@ -19,6 +19,7 @@ namespace nadpher
 
 		m_scoreLabel.setFont(m_font);
 		m_scoreLabel.setCharacterSize(scoreLabelSize);
+		m_scoreLabel.setPosition({ padding, padding });
 	}
 
 	void GUI::draw(sf::RenderTarget& target, sf::RenderStates states) const

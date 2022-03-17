@@ -15,6 +15,7 @@ namespace nadpher
 
 		static const char* fontFilePath;
 		static constexpr unsigned int scoreLabelSize = 50;
+		static constexpr float padding = 20;
 
 	private:
 	
