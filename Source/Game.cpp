@@ -67,15 +67,15 @@ namespace nadpher
 				break;
 
 			case sf::Event::KeyPressed:
-				Input::get_instance()->set_key_up(event.key.code, true);
-				Input::get_instance()->set_key_down(event.key.code, true);
-				Input::get_instance()->set_key_pressed(event.key.code, true);
+				Input::set_key_up(event.key.code, true);
+				Input::set_key_down(event.key.code, true);
+				Input::set_key_pressed(event.key.code, true);
 				break;
 
 			case sf::Event::KeyReleased:
-				Input::get_instance()->set_key_down(event.key.code, false);
-				Input::get_instance()->set_key_pressed(event.key.code, false);
-				Input::get_instance()->set_key_up(event.key.code, true);
+				Input::set_key_down(event.key.code, false);
+				Input::set_key_pressed(event.key.code, false);
+				Input::set_key_up(event.key.code, true);
 				break;
 
 			default:

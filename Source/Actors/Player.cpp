@@ -25,22 +25,22 @@ namespace nadpher
 	{
 		sf::Vector2f direction = {};
 
-		if (Input::get_instance()->get_key_pressed(sf::Keyboard::Key::D))
+		if (Input::get_key_pressed(sf::Keyboard::Key::D))
 		{
 			direction.x += 1;
 		}
 
-		if (Input::get_instance()->get_key_pressed(sf::Keyboard::Key::A))
+		if (Input::get_key_pressed(sf::Keyboard::Key::A))
 		{
 			direction.x -= 1;
 		}
 
-		if (Input::get_instance()->get_key_pressed(sf::Keyboard::Key::W))
+		if (Input::get_key_pressed(sf::Keyboard::Key::W))
 		{
 			direction.y -= 1;
 		}
 		
-		if (Input::get_instance()->get_key_pressed(sf::Keyboard::Key::S))
+		if (Input::get_key_pressed(sf::Keyboard::Key::S))
 		{
 			direction.y += 1;
 		}

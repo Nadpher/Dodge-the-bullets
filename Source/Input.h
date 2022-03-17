@@ -4,33 +4,25 @@
 #include <SFML/Window.hpp>
 #include <map>
 
-// this shouldn't be a singleton -.-
 namespace nadpher
 {
 	class Input
 	{
 	public:
+		Input() = delete;
 
-		static Input* get_instance()
-		{
-			static Input* instance = new Input;
-			return instance;
-		}
+		static void set_key_up(const sf::Keyboard::Key& key, bool val)		{ m_keysUp[key] = val;      }
+		static void set_key_down(const sf::Keyboard::Key& key, bool val)	{ m_keysDown[key] = val;    }
+		static void set_key_pressed(const sf::Keyboard::Key& key, bool val) { m_keysPressed[key] = val; }
 
-		void set_key_up(const sf::Keyboard::Key& key, bool val)		 { m_keysUp[key] = val;      }
-		void set_key_down(const sf::Keyboard::Key& key, bool val)	 { m_keysDown[key] = val;    }
-		void set_key_pressed(const sf::Keyboard::Key& key, bool val) { m_keysPressed[key] = val; }
-
-		bool get_key_down(const sf::Keyboard::Key& key)    { return m_keysDown[key];    }
-		bool get_key_up(const sf::Keyboard::Key& key)	   { return m_keysUp[key];      }
-		bool get_key_pressed(const sf::Keyboard::Key& key) { return m_keysPressed[key]; }
+		static bool get_key_down(const sf::Keyboard::Key& key)    { return m_keysDown[key];    }
+		static bool get_key_up(const sf::Keyboard::Key& key)      { return m_keysUp[key];      }
+		static bool get_key_pressed(const sf::Keyboard::Key& key) { return m_keysPressed[key]; }
 
 	private:
-		Input() {}
-
-		std::map<sf::Keyboard::Key, bool> m_keysPressed;
-		std::map<sf::Keyboard::Key, bool> m_keysUp;
-		std::map<sf::Keyboard::Key, bool> m_keysDown;
+		static std::map<sf::Keyboard::Key, bool> m_keysPressed;
+		static std::map<sf::Keyboard::Key, bool> m_keysUp;
+		static std::map<sf::Keyboard::Key, bool> m_keysDown;
 	};
 
 }
