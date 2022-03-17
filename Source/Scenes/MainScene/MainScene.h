@@ -1,10 +1,10 @@
 #ifndef DTB_MAINSCENE_H
 #define DTB_MAINSCENE_H
 
-#include "Scene.h"
+#include "../Scene.h"
 
-#include "../BulletSpawner.h"
-#include "../Actors/Player.h"
+#include "../../Actors/Player.h"
+#include "BulletSpawner.h"
 
 namespace nadpher
 {

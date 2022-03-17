@@ -1,8 +1,7 @@
 #ifndef DTB_UTIL_H
 #define DTB_UTIL_H
 
-#include <SFML/Graphics.hpp>
-
+#include <SFML/System.hpp>
 #include <cmath>
 
 namespace nadpher

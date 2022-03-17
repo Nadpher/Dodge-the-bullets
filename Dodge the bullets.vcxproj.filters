@@ -21,7 +21,7 @@
     <ClCompile Include="Source\Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Scenes\MainScene.cpp">
+    <ClCompile Include="Source\Scenes\MainScene\MainScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Source\Actors\Player.cpp">
@@ -36,7 +36,7 @@
     <ClCompile Include="Source\Actors\Bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source\BulletSpawner.cpp">
+    <ClCompile Include="Source\Scenes\MainScene\BulletSpawner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,7 +44,7 @@
     <ClInclude Include="Source\Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\Scenes\MainScene.h">
+    <ClInclude Include="Source\Scenes\MainScene\MainScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Source\Scenes\Scene.h">
@@ -68,7 +68,7 @@
     <ClInclude Include="Source\Actors\Actor.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Source\BulletSpawner.h">
+    <ClInclude Include="Source\Scenes\MainScene\BulletSpawner.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

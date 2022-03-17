@@ -7,7 +7,6 @@
 #include <map>
 #include <string>
 
-
 namespace nadpher
 {
 	class TextureManager

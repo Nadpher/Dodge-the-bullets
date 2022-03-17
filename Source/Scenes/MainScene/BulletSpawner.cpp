@@ -1,6 +1,6 @@
 #include "BulletSpawner.h"
 
-#include "Game.h"
+#include "../../Game.h"
 
 #include <random>
 

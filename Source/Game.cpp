@@ -3,7 +3,7 @@
 #include "Game.h"
 #include "Input.h"
 
-#include "Scenes/MainScene.h"
+#include "Scenes/MainScene/MainScene.h"
 
 namespace nadpher
 {

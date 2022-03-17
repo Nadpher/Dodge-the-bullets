@@ -1,7 +1,7 @@
 #ifndef DTB_BULLET_SPAWNER_H
 #define DTB_BULLET_SPAWNER_H
 
-#include "Actors/Bullet.h"
+#include "../../Actors/Bullet.h"
 
 namespace nadpher
 {
