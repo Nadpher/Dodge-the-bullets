@@ -20,27 +20,33 @@ namespace nadpher
 			return instance;
 		}
 
-		const std::unique_ptr<Scene>& getScene() const { return m_scenes[m_currentScene]; }
+		const std::unique_ptr<Scene>& getScene() const { return m_scenes[0]; }
 
 		void switchScene(size_t index) 
 		{ 
-			if (index > m_scenes.size() - 1)
+			switch (index)
 			{
-				spdlog::error("{} isn't a valid scene index", index);
-				return;
-			}
+			case 0:
+				m_scenes.pop_back();
+				m_scenes.push_back(std::make_unique<MainScene>());
+				break;
 
-			m_currentScene = index; 
+			case 1:
+				m_scenes.pop_back();
+				m_scenes.push_back(std::make_unique<GameOverScene>());
+				break;
+
+			default:
+				spdlog::error("{} isn't a valid scene index", index);
+				break;
+			}
 		}
 
 	private:
 		SceneManager()
 		{
 			m_scenes.push_back(std::make_unique<MainScene>());
-			m_scenes.push_back(std::make_unique<GameOverScene>());
 		}
-
-		size_t m_currentScene = 0;
 
 		std::vector<std::unique_ptr<Scene>> m_scenes;
 

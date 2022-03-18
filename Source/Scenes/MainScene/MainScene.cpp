@@ -4,6 +4,8 @@
 
 namespace nadpher
 {
+	float MainScene::m_endScore = 0.0f;
+
 	MainScene::MainScene()
 		: m_bulletSpawner(0.3f)
 	{
@@ -45,8 +47,10 @@ namespace nadpher
 
 	bool MainScene::end()
 	{
+		m_endScore = m_score;
+
 		SceneManager::getInstance()->switchScene(1);
-		return false;
+		return true;
 	}
 
 	void MainScene::draw(sf::RenderTarget& target, sf::RenderStates states) const

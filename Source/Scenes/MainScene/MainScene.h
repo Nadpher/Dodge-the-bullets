@@ -20,6 +20,8 @@ namespace nadpher
 
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
+		static float getEndScore() { return m_endScore; }
+
 	private:
 
 		bool isPlayerAlive(const std::vector<Bullet>& bullets);
@@ -28,7 +30,8 @@ namespace nadpher
 		BulletSpawner m_bulletSpawner;
 		GUI m_gui;
 
-		float m_score;
+		float m_score = 0;
+		static float m_endScore;
 	};
 }
 

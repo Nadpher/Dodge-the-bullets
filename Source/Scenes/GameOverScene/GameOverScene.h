@@ -16,7 +16,6 @@ namespace nadpher
 
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
-
 	private:
 		sf::Font m_font;
 

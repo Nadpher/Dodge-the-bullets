@@ -37,7 +37,10 @@ namespace nadpher
 
 			if (!SceneManager::getInstance()->getScene()->iterate(deltaTime))
 			{
-				SceneManager::getInstance()->getScene()->end();
+				if (!SceneManager::getInstance()->getScene()->end())
+				{
+					break;
+				}
 			}
 
 			m_window.clear();
