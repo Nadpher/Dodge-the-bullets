@@ -141,10 +141,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Scenes\MainScene\BulletPool.cpp" />
     <ClCompile Include="Source\Scenes\GameOverScene\GameOverScene.cpp" />
     <ClCompile Include="Source\Input.cpp" />
     <ClCompile Include="Source\Scenes\MainScene\GUI.cpp" />
-    <ClCompile Include="Source\Scenes\MainScene\BulletSpawner.cpp" />
     <ClCompile Include="Source\Actors\Bullet.cpp" />
     <ClCompile Include="Source\Actors\Player.cpp" />
     <ClCompile Include="Source\Scenes\MainScene\MainScene.cpp" />
@@ -153,10 +153,11 @@
     <ClCompile Include="Source\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Scenes\MainScene\BulletSpawner.h" />
+    <ClInclude Include="Source\Scenes\MainScene\BulletPool.h" />
     <ClInclude Include="Source\Scenes\GameOverScene\GameOverScene.h" />
     <ClInclude Include="Source\SceneManager.h" />
     <ClInclude Include="Source\Scenes\MainScene\GUI.h" />
-    <ClInclude Include="Source\Scenes\MainScene\BulletSpawner.h" />
     <ClInclude Include="Source\Actors\Actor.h" />
     <ClInclude Include="Source\Actors\Bullet.h" />
     <ClInclude Include="Source\Input.h" />

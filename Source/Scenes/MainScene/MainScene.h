@@ -24,7 +24,7 @@ namespace nadpher
 
 	private:
 
-		bool isPlayerAlive(const std::vector<Bullet>& bullets);
+		bool isPlayerAlive(const std::array<Bullet, BulletPool::maxBullets>& bullets);
 
 		Player m_player;
 		BulletSpawner m_bulletSpawner;

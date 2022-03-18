@@ -11,7 +11,7 @@ namespace nadpher
 	{
 	public:
 		Actor() = default;
-		Actor(const char* texturePath) { m_sprite.setTexture(TextureManager::get_texture(texturePath)); }
+		Actor(const char* texturePath) { m_sprite.setTexture(*TextureManager::get_texture(texturePath)); }
 		~Actor() = default;
 
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override

@@ -5,6 +5,7 @@
 #include <spdlog/spdlog.h>
 
 #include <map>
+#include <memory>
 #include <string>
 
 namespace nadpher
@@ -13,7 +14,7 @@ namespace nadpher
 	{
 	public:
 
-		static sf::Texture& get_texture(const std::string& filePath)
+		static const std::shared_ptr<sf::Texture>& get_texture(const std::string& filePath)
 		{
 			if (m_textures.find(filePath) == m_textures.end())
 			{
@@ -22,14 +23,14 @@ namespace nadpher
 				{
 					spdlog::error("Couldn't load texture {}", filePath);
 				}
-				m_textures.insert({ filePath, texture });
+				m_textures.insert({ filePath, std::make_shared<sf::Texture>(texture)});
 			}
 
 			return m_textures[filePath];
 		}
 
 	private:
-		static std::map<std::string, sf::Texture> m_textures;
+		static std::map<std::string, std::shared_ptr<sf::Texture>> m_textures;
 	};
 
 }

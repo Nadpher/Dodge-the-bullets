@@ -2,5 +2,5 @@
 
 namespace nadpher
 {
-	std::map<std::string, sf::Texture> TextureManager::m_textures;
+	std::map<std::string, std::shared_ptr<sf::Texture>> TextureManager::m_textures;
 }

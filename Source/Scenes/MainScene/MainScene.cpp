@@ -1,4 +1,5 @@
 #include "MainScene.h"
+#include "BulletPool.h"
 
 #include "../../SceneManager.h"
 
@@ -24,7 +25,7 @@ namespace nadpher
 		return isPlayerAlive(m_bulletSpawner.getBullets());
 	}
 
-	bool MainScene::isPlayerAlive(const std::vector<Bullet>& bullets)
+	bool MainScene::isPlayerAlive(const std::array<Bullet, BulletPool::maxBullets>& bullets)
 	{
 		sf::Vector2f playerPosition = m_player.getPosition();
 

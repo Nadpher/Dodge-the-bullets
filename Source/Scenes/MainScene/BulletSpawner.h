@@ -1,33 +1,44 @@
 #ifndef DTB_BULLET_SPAWNER_H
 #define DTB_BULLET_SPAWNER_H
 
-#include "../../Actors/Bullet.h"
+#include "BulletPool.h"
 
 namespace nadpher
 {
 	class BulletSpawner : public sf::Drawable
 	{
 	public:
-		BulletSpawner() = delete;
-		BulletSpawner(float frequency = 1.0f);
+		BulletSpawner(float frequency = 1.0f)
+			: m_frequency(frequency),
+			m_timer(0.0f)
+		{}
 
-		void update(float deltaTime);
-		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+		void update(float deltaTime)
+		{
+			m_timer += deltaTime;
+			if (m_timer >= m_frequency)
+			{
+				m_timer = 0.0f;
+				m_pool.create();
+			}
 
-		const std::vector<Bullet>& getBullets() const{ return m_bullets; }
+			m_pool.update(deltaTime);
+		}
 
-		static constexpr float minBulletSpeed = 300.0f;
-		static constexpr float maxBulletSpeed = 800.0f;
+		const std::array<Bullet, BulletPool::maxBullets>& getBullets() { return m_pool.getBullets(); }
+
+		void draw(sf::RenderTarget& target, sf::RenderStates states) const override
+		{
+			for (const Bullet& bullet : m_pool.getBullets())
+			{
+				target.draw(bullet);
+			}
+		}
+
 	private:
-
-		void generateBullet();
-		void checkOutOfBounds();
-
-
-		float m_spawnFrequency;
+		BulletPool m_pool;
 		float m_timer;
-
-		std::vector<Bullet> m_bullets;
+		const float m_frequency;
 	};
 }
 
