@@ -1,5 +1,7 @@
 #include "MainScene.h"
 
+#include "../../SceneManager.h"
+
 namespace nadpher
 {
 	MainScene::MainScene()
@@ -41,9 +43,10 @@ namespace nadpher
 		return true;
 	}
 
-	void MainScene::end()
+	bool MainScene::end()
 	{
-
+		SceneManager::getInstance()->switchScene(1);
+		return false;
 	}
 
 	void MainScene::draw(sf::RenderTarget& target, sf::RenderStates states) const

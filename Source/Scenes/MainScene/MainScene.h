@@ -16,7 +16,7 @@ namespace nadpher
 		~MainScene() = default;
 
 		bool iterate(float deltaTime) override;
-		void end() override;
+		bool end() override;
 
 		void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 

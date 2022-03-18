@@ -6,8 +6,8 @@
 
 #include <spdlog/spdlog.h>
 
-#include "Scenes/Scene.h"
 #include "Scenes/MainScene/MainScene.h"
+#include "Scenes/GameOverScene/GameOverScene.h"
 
 namespace nadpher
 {
@@ -37,6 +37,7 @@ namespace nadpher
 		SceneManager()
 		{
 			m_scenes.push_back(std::make_unique<MainScene>());
+			m_scenes.push_back(std::make_unique<GameOverScene>());
 		}
 
 		size_t m_currentScene = 0;

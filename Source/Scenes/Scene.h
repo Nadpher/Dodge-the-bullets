@@ -11,7 +11,7 @@ namespace nadpher
 		virtual ~Scene() = default;
 
 		virtual bool iterate(float deltaTime) = 0;
-		virtual void end() = 0;
+		virtual bool end() = 0;
 	};
 }
 
